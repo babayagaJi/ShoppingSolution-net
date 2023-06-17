@@ -23,6 +23,14 @@ namespace ShoppingSolution.Models
 
         public string Description { get; set; }
 
+        
+        [Display(Name = "Price")]
+        [Required(ErrorMessage = "Field Required")]
+        public int Price { get; set; }
+
+        
+
+
 
 
         /**** Product Category Select here ****/

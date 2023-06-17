@@ -21,6 +21,5 @@ namespace ShoppingSolution.Models
         public DbSet<Category> categories { get; set; }
 
 
-
     }
 }
