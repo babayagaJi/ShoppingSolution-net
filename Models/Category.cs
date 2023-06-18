@@ -12,7 +12,7 @@ namespace ShoppingSolution.Models
         [Key]
         public int CategoryId { get; set; }
 
-        [Display(Name = "Name")]
+        [Display(Name = "Category")]
         [Required(ErrorMessage = "Field Required")]
         public string Name { get; set; }
 
