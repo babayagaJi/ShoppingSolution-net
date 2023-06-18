@@ -6,10 +6,16 @@
 }
 
 
+@{
+    string Role = Session["Role"].ToString();
+}
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (Role == "Admin")
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -21,20 +27,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @if (Role == "Admin")
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) <span>|</span>
+                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) <span>|</span>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
+                }
+            </td>
+        </tr>
+    }
 
 </table>

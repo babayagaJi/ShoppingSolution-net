@@ -23,12 +23,12 @@ namespace ShoppingSolution.Models
 
         public string Description { get; set; }
 
-        
+
         [Display(Name = "Price")]
         [Required(ErrorMessage = "Field Required")]
         public int Price { get; set; }
 
-        
+
 
 
 
@@ -38,5 +38,21 @@ namespace ShoppingSolution.Models
         public virtual Category Category { get; set; }
 
         public int CategoryId { get; set; }
+    }
+    public class ProductList
+    {
+
+        public int ProductId { get; set; }
+
+
+        public string Name { get; set; }
+
+
+
+        public string Description { get; set; }
+
+
+        public int Price { get; set; }
+        public int Qty { get; set; }
     }
 }

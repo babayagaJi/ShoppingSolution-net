@@ -150,3 +150,8 @@ p > a {
     margin: 4px 2px;
     cursor: pointer;
 }
+.noproducts{
+    padding:16px;
+    background:red;
+    color:#fff;
+}
